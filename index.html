@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberHub - Interactive Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <script>
+      // Robust polyfill for process.env to prevent ReferenceErrors
+      window.process = window.process || {};
+      window.process.env = window.process.env || {};
+    </script>
+    <style>
+      body {
+        font-family: 'Rajdhani', sans-serif;
+        margin: 0;
+        overflow: hidden; /* Prevent scrolling on the main container */
+        background-color: #0f172a;
+      }
+      .font-cyber {
+        font-family: 'Orbitron', sans-serif;
+      }
+      /* Custom Scrollbar for inner content */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(139, 92, 246, 0.5); 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(139, 92, 246, 0.8); 
+      }
+      
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+      
+      @keyframes slow-zoom {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+      .animate-slow-zoom {
+        animation: slow-zoom 20s ease-in-out infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@0.1.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
